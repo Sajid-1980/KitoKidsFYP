@@ -1,0 +1,86 @@
+/* Layout 317 */
+#pgc-317-0-0,
+#pgc-317-2-0,
+#pgc-317-3-0,
+#pgc-317-4-0,
+#pgc-317-5-0 {
+    width: 100%
+}
+
+#pg-317-0,
+#pg-317-1,
+#pg-317-2,
+#pg-317-3, #pg-317-4, #pl-317 .so-panel, #pl-317 .so-panel:last-of-type {
+    margin-bottom: 0px
+}
+
+#pgc-317-1-0, #pgc-317-1-1 {
+    width: 50%
+}
+
+#pl-317 #panel-317-2-0-0 {
+    margin: 60px 0px 0px 0px
+}
+
+#pg-317-0.panel-has-style > .panel-row-style, #pg-317-0.panel-no-style, 
+#pg-317-1.panel-has-style > .panel-row-style, #pg-317-1.panel-no-style, 
+
+#pg-317-2.panel-has-style > .panel-row-style, #pg-317-2.panel-no-style,
+#pg-317-3.panel-has-style > .panel-row-style, #pg-317-3.panel-no-style, 
+#pg-317-4.panel-has-style > .panel-row-style, #pg-317-4.panel-no-style, 
+#pg-317-5.panel-has-style > .panel-row-style, #pg-317-5.panel-no-style {
+    -webkit-align-items: flex-start;
+    align-items: flex-start
+}
+
+#panel-317-1-0-0 > .panel-widget-style {
+    padding-top: 300px
+}
+
+#panel-317-1-1-0 > .panel-widget-style {
+    margin-top: 100px
+}
+
+@media (max-width:767px) {
+    #pg-317-0.panel-no-style, #pg-317-0.panel-has-style > .panel-row-style, 
+    #pg-317-0, #pg-317-1.panel-no-style, #pg-317-1.panel-has-style > .panel-row-style,
+    #pg-317-1, #pg-317-2.panel-no-style, #pg-317-2.panel-has-style > .panel-row-style, #pg-317-2, 
+    #pg-317-3.panel-no-style, #pg-317-3.panel-has-style > .panel-row-style, #pg-317-3, #pg-317-4.panel-no-style, 
+    #pg-317-4.panel-has-style > .panel-row-style, #pg-317-4, #pg-317-5.panel-no-style,
+    #pg-317-5.panel-has-style > .panel-row-style, #pg-317-5 {
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column
+    }
+
+        #pg-317-0 > .panel-grid-cell, #pg-317-0 > .panel-row-style > .panel-grid-cell, 
+        #pg-317-1 > .panel-grid-cell, #pg-317-1 > .panel-row-style > .panel-grid-cell, 
+        #pg-317-2 > .panel-grid-cell, #pg-317-2 > .panel-row-style > .panel-grid-cell, 
+        #pg-317-3 > .panel-grid-cell, #pg-317-3 > .panel-row-style > .panel-grid-cell, 
+        #pg-317-4 > .panel-grid-cell, #pg-317-4 > .panel-row-style > .panel-grid-cell, 
+        #pg-317-5 > .panel-grid-cell, #pg-317-5 > .panel-row-style > .panel-grid-cell {
+            width: 100%;
+            margin-right: 0
+        }
+
+    #pgc-317-1-0, #pl-317 .panel-grid .panel-grid-cell-mobile-last {
+        margin-bottom: 0px
+    }
+
+    #pl-317 .panel-grid-cell {
+        padding: 0
+    }
+
+    #pl-317 .panel-grid .panel-grid-cell-empty {
+        display: none
+    }
+
+    #panel-317-1-0-0 > .panel-widget-style {
+        padding-top: 20px
+    }
+
+    #panel-317-1-1-0 > .panel-widget-style {
+        margin-top: 20px
+    }
+}
+ 

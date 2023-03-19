@@ -1,0 +1,391 @@
+﻿@{
+
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+
+ 
+
+
+
+<div class="row p-3">
+    <div class="col-md-9">
+        <h2 class="">Alphabets Tracing</h2>
+    </div>
+    <div class="col-md-3 mt-2">
+        <a class="btn btn-primary" href="/Admin/Alphabet/CreateAlphabetLevelOne"><i class="bi bi-plus-circle"></i>&nbsp;Create New  Alphabet Tracing</a>
+    </div>
+</div>
+
+
+ 
+
+@{
+
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+ 
+
+<div class="border bg-light" style="border-radius:20px; padding:30px;">
+    <table id="quizListTable" class="table table-bordered table-striped" style="width:100%">
+        <thead>
+            <tr>
+
+                <th>Image</th>
+                <th>OptionA</th>
+                <th>OptionB</th>
+                <th>OptionC</th>
+                <th>OptionD</th>
+                <th>CorrectAnswer</th>
+                <th> </th>
+
+
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+
+
+
+
+
+@section Scripts
+    {
+    <script>
+
+        $('#quizListTable').dataTable({
+
+            "ajax": {
+
+                "url": "/Admin/Alphabet/AlphabetTable",
+                "type": "GET",
+                "datatype": "json"
+
+            }
+            ,
+            "columns": [
+
+
+              
+
+                {
+                    "data": "questionText", "render": function (data) {
+                        return '<img style="height:100px; width:100px" src="' + "" + data + '" />';
+
+                    }
+                },
+
+
+                { "data": "optionA" },
+                { "data": "optionB" },
+                { "data": "optionC" },
+                { "data": "optionD" },
+                 
+                { "data": "correctAnswer" },
+                {
+                    "data": "id",
+                    "render": function (data) {
+                        return `<div class="text-center">
+                                                <a class="btn btn-danger text-white" style="cursor:pointer; width: 120px;"
+                                                    onclick=Delete('/Admin/Alphabet/Delete?id=${data}')>
+                                                            Delete
+                                                </a>
+                                            </div>`;
+                    },
+                    "width": "20%"
+                }
+            ]
+        });
+
+
+
+        function Delete(deleteUrl) {
+            swal({
+                title: "Are you sure to delete the Alphabets Collection?",
+                text: "Once deleted, you will not be able to recover",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true
+            }).then((willDelete) => {
+                // If user selected yes
+                if (willDelete) {
+                    $.ajax({
+                        type: "DELETE",
+                        url: deleteUrl,
+                        success: function (data) {
+                            if (data.success) {
+                                toastr.success(data.message);
+                                dataTable.ajax.reload();
+                            }
+                            else {
+                                toastr.error(data.message);
+                            }
+                        }
+                    });
+                }
+            });
+        }
+
+
+
+
+
+
+
+    </script>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@{
+    ViewData["Title"] = "Quizzes";
+}
+
+
+<br />
+
+<div class="text-center">
+    <h1 class="display-4">Cluster Of Fruits Level One</h1>
+</div>
+
+<br />
+<br />
+
+<p>
+    <a asp-action="CreateClasterFruitLevelOne" asp-area="Admin" class="btn btn-secondary">Create New</a>
+</p>
+
+
+<div class="col-12 border bg-light" style="border-radius:20px; padding:30px;">
+    <table id="quizListTable" class="table table-bordered table-striped" style="width:100%">
+        <thead>
+            <tr>
+
+                <th>QuestionText</th>
+                <th>OptionA</th>
+                <th>OptionB</th>
+                <th>OptionC</th>
+                <th>OptionD</th>
+                <th>CorrectAnswer</th>
+                <th> </th>
+
+
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+
+
+
+
+@section Scripts
+    {
+    <script>
+
+
+        $('#quizListTable').dataTable({
+
+            "ajax": {
+
+                "url": "/Admin/ClusterFruit/getallquizzes",
+                "type": "GET",
+                "datatype": "json"
+
+            }
+            ,
+            "columns": [
+
+
+                { "data": "questionText", "width": "20%" },
+                { "data": "optionA", "width": "20%" },
+                { "data": "optionB", "width": "20%" },
+                { "data": "optionC", "width": "20%" },
+                { "data": "optionD", "width": "20%" },
+                { "data": "correctAnswer", "width": "20%" },
+                {
+                    "data": "id",
+                    "render": function (data) {
+                        return `<div class="text-center">
+                                        <a class="btn btn-danger text-white" style="cursor:pointer; width: 120px;"
+                                            onclick=Delete('quiz/Delete?id=${data}')>
+                                            Delete
+                                        </a>
+                                    </div>`;
+                    },
+                    "width": "20%"
+                }
+
+            ]
+        });
+
+
+
+
+
+
+    </script>
+}
+
+
+
+
+*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@{
+    ViewData["Title"] = "Quizzes";
+}
+ 
+ 
+<br />
+
+<div class="text-center">
+    <h1 class="display-4">Cluster Of Fruits Level One</h1>
+</div>
+
+<br />
+<br />
+
+<p>
+    <a asp-action="CreateClasterFruitLevelOne" asp-area="Admin" class="btn btn-secondary">Create New</a>
+</p>
+
+
+<div class="col-12 border bg-light" style="border-radius:20px; padding:30px;">
+    <table id="quizListTable" class="table table-bordered table-striped" style="width:100%">
+        <thead>
+            <tr>
+
+                <th>QuestionText</th>
+                <th>OptionA</th>
+                <th>OptionB</th>
+                <th>OptionC</th>
+                <th>OptionD</th>
+                <th>CorrectAnswer</th>
+                <th> </th>
+
+
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+
+
+
+
+@section Scripts
+    {
+    <script>
+
+
+        $('#quizListTable').dataTable({
+
+            "ajax": {
+
+                "url": "/Admin/ClusterFruit/getallquizzes",
+                "type": "GET",
+                "datatype": "json"
+
+            }
+            ,
+            "columns": [
+
+
+                { "data": "questionText", "width": "20%" },
+                { "data": "optionA", "width": "20%" },
+                { "data": "optionB", "width": "20%" },
+                { "data": "optionC", "width": "20%" },
+                { "data": "optionD", "width": "20%" },
+                { "data": "correctAnswer", "width": "20%" },
+                {
+                    "data": "id",
+                    "render": function (data) {
+                        return `<div class="text-center">
+                                        <a class="btn btn-danger text-white" style="cursor:pointer; width: 120px;"
+                                            onclick=Delete('quiz/Delete?id=${data}')>
+                                            Delete
+                                        </a>
+                                    </div>`;
+                    },
+                    "width": "20%"
+                }
+
+            ]
+        });
+
+
+
+
+
+
+    </script>
+}
+
+
+
+
+*@

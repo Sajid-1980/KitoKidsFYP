@@ -1,0 +1,64 @@
+ /* Layout 3216 */ #pgc-3216-0-0, #pgc-3216-1-0 {
+    width: 100%
+}
+
+#pg-3216-0, #pl-3216 .so-panel, #pl-3216 .so-panel:last-of-type {
+    margin-bottom: 0px
+}
+
+    #pg-3216-0.panel-has-style > .panel-row-style, #pg-3216-0.panel-no-style, #pg-3216-1.panel-has-style > .panel-row-style, #pg-3216-1.panel-no-style {
+        -webkit-align-items: flex-start;
+        align-items: flex-start
+    }
+
+#pg-3216-1 > .panel-row-style {
+    background-color: #0b1a48;
+    background-image: url(https://occupationaltherapy.com.au/wp-content/uploads/2019/02/service-form-BG.png);
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: contain
+}
+
+#pgc-3216-1-0 {
+    align-self: auto
+}
+
+#panel-3216-1-0-0 > .panel-widget-style {
+    padding: 40px 40px 2px;
+    border: 1px solid #E0E1E4;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 34px 0 rgba(2,6,19,0.13);
+    margin: 20px 0
+}
+
+@media (max-width:767px) {
+    #pg-3216-0.panel-no-style, #pg-3216-0.panel-has-style > .panel-row-style, #pg-3216-0, #pg-3216-1.panel-no-style, #pg-3216-1.panel-has-style > .panel-row-style, #pg-3216-1 {
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column
+    }
+
+        #pg-3216-0 > .panel-grid-cell, #pg-3216-0 > .panel-row-style > .panel-grid-cell, #pg-3216-1 > .panel-grid-cell, #pg-3216-1 > .panel-row-style > .panel-grid-cell {
+            width: 100%;
+            margin-right: 0
+        }
+
+    #pl-3216 .panel-grid-cell {
+        padding: 0
+    }
+
+    #pl-3216 .panel-grid .panel-grid-cell-empty {
+        display: none
+    }
+
+    #pl-3216 .panel-grid .panel-grid-cell-mobile-last {
+        margin-bottom: 0px
+    }
+
+    #panel-3216-0-0-0 > .panel-widget-style, #panel-3216-0-0-1 > .panel-widget-style {
+        margin-bottom: 20px
+    }
+}
+
+ 

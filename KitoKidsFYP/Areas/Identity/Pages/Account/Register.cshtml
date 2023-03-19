@@ -1,0 +1,247 @@
+﻿@page
+@model RegisterModel
+@{
+     var roles = (List<IdentityRole>)ViewData["roles"];
+}
+ 
+
+
+<head>
+
+    <title>Register</title>
+</head>
+
+
+
+<!-- Navbar-->
+<header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <div class="container">
+            <!-- Navbar Brand -->
+            <a href="#" class="navbar-brand">
+                <img src="/images/logo.png" alt="logo" width="120" class="rounded-circle">
+                <span style="color: white; padding-left: 0; font-size: 35px; font-weight: bold; font-family: 'Kanit', sans-serif;
+                " class="col-md-12">Occupational Therapy for Special Childs</span>
+            </a>
+        </div>
+    </nav>
+</header>
+
+
+<div class="container">
+    <div class="row py-2 mt-2 align-items-center">
+        <!-- For Demo Purpose -->
+        <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
+            <img src="https://bootstrapious.com/i/snippets/sn-registeration/illustration.svg" alt="" class="img-fluid mb-3 d-none d-md-block">
+            <h3 style=" font-family: 'Kanit', sans-serif; color:white">Occupational Therapy</h3>
+            <span class="font-italic text-muted mb-0" style=" font-family: 'Kanit', sans-serif; color: white !important;">
+                Our passion is to see children fulfil their potential by helping them overcome some of the challenges associated with growing up.
+            </span>
+
+        </div>
+
+        <!-- Registeration Form -->
+        <div class="col-md-7 col-lg-6 ml-auto">
+            <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                <div class="row">
+
+                    <!-- ChildFullName -->
+                    <div class="input-group col-lg-6 mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-user text-muted"></i>
+                            </span>
+                        </div>
+                        <input asp-for="Input.ChildFullName" type="text" placeholder="Child Full Name  " class="required form-control bg-white border-left-0 border-md">
+                    </div>
+
+                    <!-- NameOfParent -->
+                    <div class="input-group col-lg-6 mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-user text-muted"></i>
+                            </span>
+                        </div>
+                        <input asp-for="Input.NameOfParent" type="text" placeholder="Name of Parent" class="form-control bg-white border-left-0 border-md">
+                    </div>
+
+                    <!-- Child Address  -->
+                    <div class="input-group col-lg-12 mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-envelope text-muted"></i>
+                            </span>
+                        </div>
+                        <input asp-for="Input.Email" type="email" placeholder="Email Address" class="form-control bg-white border-left-0 border-md">
+                    </div>
+
+                    <!--  ChildAddress -->
+                    <div class="input-group col-lg-12 mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-address-card text-muted	"></i>
+                            </span>
+                        </div>
+                        <input asp-for="Input.ChildAddress" type="text" placeholder="Child Address" class="form-control bg-white border-left-0 border-md">
+                    </div>
+
+                    <!-- DOB   -->
+                    <div class="input-group col-lg-6 mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-calendar text-muted"></i>
+                            </span>
+                        </div>
+                        <input asp-for="Input.ChildAddress" type="date" class="form-control bg-white border-left-0 border-md">
+                    </div>
+
+                    <!-- Gender -->
+                    <div class="input-group col-lg-6 mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-user text-muted"></i>
+                            </span>
+                        </div>
+                        <select asp-for="Input.Gender" class="form-control custom-select bg-white border-left-0 border-md">
+
+                            <option value="">Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+
+
+                        </select>
+                    </div>
+
+
+
+                    <!-- Nationality -->
+                    <div class="input-group col-lg-6 mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-navicon text-muted"></i>
+                            </span>
+                        </div>
+                        <select asp-for="Input.Nationality" class="form-control custom-select bg-white border-left-0 border-md">
+                            <option value="" disabled selected> Nationality</option>
+                            <option value="Pakistani">Pakistani</option>
+                            <option value="Foreign">Foreign</option>
+
+                        </select>
+                    </div>
+
+                    <!-- Religion -->
+                    <div class="input-group col-lg-6 mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-lock text-muted"></i>
+                            </span>
+                        </div>
+                        <input asp-for="Input.Religion" type="text" placeholder="Religion " class="form-control bg-white border-left-0 border-md">
+                    </div>
+
+
+                    <div class="input-group col-lg-12 mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-phone-square text-muted"></i>
+                            </span>
+                        </div>
+                        <select style="max-width: 80px" class="custom-select form-control bg-white border-left-0 border-md h-38 font-weight-bold text-muted">
+                            <option value="">+12</option>
+                            <option value="">+10</option>
+                            <option value="">+15</option>
+                            <option value="">+18</option>
+                        </select>
+                        <input asp-for="Input.PhoneNo" type="tel" placeholder="Phone Number" class="form-control bg-white border-md border-left-0 pl-3">
+                    </div>
+
+
+
+                    <!--Roles  -->
+                    <div class="input-group col-lg-6 mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-lock text-muted"></i>
+                            </span>
+                        </div>
+                        <select asp-for="Input.Name" class="form-control" placeholder="Confirmation Password" asp-items='new SelectList(roles , "Id" , "Name")'>
+                        </select>
+                    </div>
+
+                     <!-- Password Name -->
+                    <div class="input-group col-lg-6 mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-lock text-muted"></i>
+                            </span>
+                        </div>
+                        <input asp-for="Input.CertificateNo" type="number" placeholder="Certificate Number" class="form-control bg-white border-left-0 border-md">
+                    </div>
+
+                    <!-- Password Name -->
+                    <div class="input-group col-lg-6 mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-lock text-muted"></i>
+                            </span>
+                        </div>
+                        <input asp-for="Input.Password" type="password" placeholder="Password" class="form-control bg-white border-left-0 border-md">
+                    </div>
+
+                    <!--Confirmation Password-->
+                    <div class="input-group col-lg-6 mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-lock text-muted"></i>
+                            </span>
+                        </div>
+                        <input asp-for="Input.ConfirmPassword" type="password" placeholder="Confirmation Password" class="form-control bg-white border-left-0 border-md">
+                    </div>
+
+                  
+
+
+
+                    <!-- Submit Button -->
+                    <div class="form-group  col-lg-12 mx-auto mb-0">
+                        @* <a href="#" class="btn btn-primary btn-block py-2" style="border-radius:60px">
+                        <span class="font-weight-bold">Create your account</span>
+                        </a>*@
+                        <button id="registerSubmit" style="border-radius:60px" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+                    </div>
+
+                    <!-- Divider Text -->
+                    <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
+                        <div class="border-bottom w-100 ml-5"></div>
+                        <span class="px-2 small text-muted font-weight-bold text-muted">OR</span>
+                        <div class="border-bottom w-100 mr-5"></div>
+                    </div>
+
+                    <!-- Social Login -->
+                    <div class="form-group col-lg-12 mx-auto">
+                        <a href="#" class="btn btn-primary btn-block py-2 btn-facebook" style="border-radius:60px">
+                            <i class="fa fa-facebook-f mr-2"></i>
+                            <span class="font-weight-bold">Continue with Facebook</span>
+                        </a>
+                        <a href="#" class="btn btn-primary btn-block py-2 btn-twitter" style="border-radius:60px">
+                            <i class="fa fa-twitter mr-2"></i>
+                            <span class="font-weight-bold">Continue with Twitter</span>
+                        </a>
+                    </div>
+
+                    <!-- Already Registered -->
+                    <div class="text-center w-100">
+                        <p class="text-muted text-white font-weight-bold" style="color:white !important">Already Registered? <a asp-page="/Account/Login" class="text-primary ml-2">Login</a></p>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
+

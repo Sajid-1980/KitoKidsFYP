@@ -1,0 +1,599 @@
+.layer-2.layer-images.home-banner-parallax{
+    margin-top:15px
+}
+@media only screen and (max-width: 375px)
+{
+.custom-banner-container .e1 .t1{
+font-size: 110px;
+}
+
+}
+
+@media only screen and (max-width: 346px){
+.custom-banner-container .e1 .t1{
+font-size: 100px;
+}
+}
+
+#responsive-menu-pro-button,
+#responsive-menu-pro-container {
+display: none;
+-webkit-text-size-adjust: 100%;
+}
+
+#responsive-menu-pro-container {
+z-index: 99998;
+}
+
+@media screen and (max-width:1023px) {
+
+#responsive-menu-pro-container {
+display: block;
+position: fixed;
+top: 0;
+bottom: 0;        padding-bottom: 5px;
+margin-bottom: -5px;
+outline: 1px solid transparent;
+overflow-y: auto;
+overflow-x: hidden;
+}
+
+#responsive-menu-pro-container .responsive-menu-pro-search-box {
+width: 100%;
+padding: 0 2%;
+border-radius: 2px;
+height: 50px;
+}
+
+#responsive-menu-pro-container.push-left,
+#responsive-menu-pro-container.slide-left {
+transform: translateX(-100%);
+-ms-transform: translateX(-100%);
+-webkit-transform: translateX(-100%);
+-moz-transform: translateX(-100%);
+}
+
+.responsive-menu-pro-open #responsive-menu-pro-container.push-left,
+.responsive-menu-pro-open #responsive-menu-pro-container.slide-left {
+transform: translateX(0);
+-ms-transform: translateX(0);
+-webkit-transform: translateX(0);
+-moz-transform: translateX(0);
+}
+
+#responsive-menu-pro-container.push-top,
+#responsive-menu-pro-container.slide-top {
+transform: translateY(-100%);
+-ms-transform: translateY(-100%);
+-webkit-transform: translateY(-100%);
+-moz-transform: translateY(-100%);
+}
+
+.responsive-menu-pro-open #responsive-menu-pro-container.push-top,
+.responsive-menu-pro-open #responsive-menu-pro-container.slide-top {
+transform: translateY(0);
+-ms-transform: translateY(0);
+-webkit-transform: translateY(0);
+-moz-transform: translateY(0);
+}
+
+#responsive-menu-pro-container.push-right,
+#responsive-menu-pro-container.slide-right {
+transform: translateX(100%);
+-ms-transform: translateX(100%);
+-webkit-transform: translateX(100%);
+-moz-transform: translateX(100%);
+}
+
+.responsive-menu-pro-open #responsive-menu-pro-container.push-right,
+.responsive-menu-pro-open #responsive-menu-pro-container.slide-right {
+transform: translateX(0);
+-ms-transform: translateX(0);
+-webkit-transform: translateX(0);
+-moz-transform: translateX(0);
+}
+
+#responsive-menu-pro-container.push-bottom,
+#responsive-menu-pro-container.slide-bottom {
+transform: translateY(100%);
+-ms-transform: translateY(100%);
+-webkit-transform: translateY(100%);
+-moz-transform: translateY(100%);
+}
+
+.responsive-menu-pro-open #responsive-menu-pro-container.push-bottom,
+.responsive-menu-pro-open #responsive-menu-pro-container.slide-bottom {
+transform: translateY(0);
+-ms-transform: translateY(0);
+-webkit-transform: translateY(0);
+-moz-transform: translateY(0);
+}
+
+#responsive-menu-pro-container,
+#responsive-menu-pro-container:before,
+#responsive-menu-pro-container:after,
+#responsive-menu-pro-container *,
+#responsive-menu-pro-container *:before,
+#responsive-menu-pro-container *:after {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+#responsive-menu-pro-container #responsive-menu-pro-search-box,
+#responsive-menu-pro-container #responsive-menu-pro-additional-content,
+#responsive-menu-pro-container #responsive-menu-pro-title {
+padding: 25px 5%;
+}
+
+#responsive-menu-pro-container #responsive-menu-pro,
+#responsive-menu-pro-container #responsive-menu-pro ul {
+width: 100%;
+}
+
+#responsive-menu-pro-container #responsive-menu-pro ul.responsive-menu-pro-submenu {
+display: none;
+}
+
+#responsive-menu-pro-container #responsive-menu-pro ul.responsive-menu-pro-submenu.responsive-menu-pro-submenu-open {
+display: block;
+}        #responsive-menu-pro-container #responsive-menu-pro ul.responsive-menu-pro-submenu-depth-1 a.responsive-menu-pro-item-link {
+    padding-left:10%;
+}
+
+#responsive-menu-pro-container #responsive-menu-pro ul.responsive-menu-pro-submenu-depth-2 a.responsive-menu-pro-item-link {
+    padding-left:15%;
+}
+
+#responsive-menu-pro-container #responsive-menu-pro ul.responsive-menu-pro-submenu-depth-3 a.responsive-menu-pro-item-link {
+    padding-left:20%;
+}
+
+#responsive-menu-pro-container #responsive-menu-pro ul.responsive-menu-pro-submenu-depth-4 a.responsive-menu-pro-item-link {
+    padding-left:25%;
+}
+
+#responsive-menu-pro-container #responsive-menu-pro ul.responsive-menu-pro-submenu-depth-5 a.responsive-menu-pro-item-link {
+    padding-left:30%;
+}
+#responsive-menu-pro-container li.responsive-menu-pro-item {
+width: 100%;
+list-style: none;
+}
+
+#responsive-menu-pro-container li.responsive-menu-pro-item a {
+width: 100%;
+display: block;
+text-decoration: none;
+padding: 05%;
+position: relative;
+}
+
+#responsive-menu-pro-container li.responsive-menu-pro-item a .glyphicon,
+#responsive-menu-pro-container li.responsive-menu-pro-item a .fab,
+#responsive-menu-pro-container li.responsive-menu-pro-item a .fas {
+margin-right: 15px;
+}
+
+#responsive-menu-pro-container li.responsive-menu-pro-item a .responsive-menu-pro-subarrow {
+position: absolute;
+top: 0;
+bottom: 0;
+text-align: center;
+overflow: hidden;
+}
+
+#responsive-menu-pro-container li.responsive-menu-pro-item a .responsive-menu-pro-subarrow .glyphicon,
+#responsive-menu-pro-container li.responsive-menu-pro-item a .responsive-menu-pro-subarrow .fab,
+#responsive-menu-pro-container li.responsive-menu-pro-item a .responsive-menu-pro-subarrow .fas {
+margin-right: 0;
+}
+
+button#responsive-menu-pro-button .responsive-menu-pro-button-icon-inactive {
+display: none;
+}
+
+button#responsive-menu-pro-button {
+z-index: 99999;
+display: none;
+overflow: hidden;
+outline: none;
+}
+
+button#responsive-menu-pro-button img {
+max-width: 100%;
+}
+
+.responsive-menu-pro-label {
+display: inline-block;
+font-weight: 600;
+margin: 0 5px;
+vertical-align: middle;
+}
+
+.responsive-menu-pro-accessible {
+display: inline-block;
+}
+
+.responsive-menu-pro-accessible .responsive-menu-pro-box {
+display: inline-block;
+vertical-align: middle;
+}
+
+.responsive-menu-pro-label.responsive-menu-pro-label-top,
+.responsive-menu-pro-label.responsive-menu-pro-label-bottom {
+display: block;
+margin: 0 auto;
+}
+
+button#responsive-menu-pro-button {
+padding: 0 0;
+display: inline-block;
+cursor: pointer;
+transition-property: opacity, filter;
+transition-duration: 0.15s;
+transition-timing-function: linear;
+font: inherit;
+color: inherit;
+text-transform: none;
+background-color: transparent;
+border: 0;
+margin: 0;
+}
+
+.responsive-menu-pro-box {
+width:30px;
+height:16px;
+display: inline-block;
+position: relative;
+}
+
+.responsive-menu-pro-inner {
+display: block;
+top: 50%;
+margin-top:-1px;
+}
+
+.responsive-menu-pro-inner,
+.responsive-menu-pro-inner::before,
+.responsive-menu-pro-inner::after {
+width:30px;
+height:2px;
+background-color:#ffffff;
+border-radius: 4px;
+position: absolute;
+transition-property: transform;
+transition-duration: 0.15s;
+transition-timing-function: ease;
+}
+
+.responsive-menu-pro-open .responsive-menu-pro-inner,
+.responsive-menu-pro-open .responsive-menu-pro-inner::before,
+.responsive-menu-pro-open .responsive-menu-pro-inner::after {
+background-color:rgba(2, 6, 19, 1);
+}
+
+button#responsive-menu-pro-button:hover .responsive-menu-pro-inner,
+button#responsive-menu-pro-button:hover .responsive-menu-pro-inner::before,
+button#responsive-menu-pro-button:hover .responsive-menu-pro-inner::after,
+button#responsive-menu-pro-button:hover .responsive-menu-pro-open .responsive-menu-pro-inner,
+button#responsive-menu-pro-button:hover .responsive-menu-pro-open .responsive-menu-pro-inner::before,
+button#responsive-menu-pro-button:hover .responsive-menu-pro-open .responsive-menu-pro-inner::after,
+button#responsive-menu-pro-button:focus .responsive-menu-pro-inner,
+button#responsive-menu-pro-button:focus .responsive-menu-pro-inner::before,
+button#responsive-menu-pro-button:focus .responsive-menu-pro-inner::after,
+button#responsive-menu-pro-button:focus .responsive-menu-pro-open .responsive-menu-pro-inner,
+button#responsive-menu-pro-button:focus .responsive-menu-pro-open .responsive-menu-pro-inner::before,
+button#responsive-menu-pro-button:focus .responsive-menu-pro-open .responsive-menu-pro-inner::after {
+background-color:#ffffff;
+}
+
+.responsive-menu-pro-inner::before,
+.responsive-menu-pro-inner::after {
+content: "";
+display: block;
+}
+
+.responsive-menu-pro-inner::before {
+top:-7px;
+}
+
+.responsive-menu-pro-inner::after {
+bottom:-7px;
+}.responsive-menu-pro-spring .responsive-menu-pro-inner {
+top:1px;
+transition: background-color 0s 0.15s linear;
+}
+
+.responsive-menu-pro-spring .responsive-menu-pro-inner::before {
+top:7px;
+transition: top 0.12s 0.3s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+        transform 0.15s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.responsive-menu-pro-spring .responsive-menu-pro-inner::after {
+top:14px;
+transition: top 0.3s 0.3s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+        transform 0.15s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+button#responsive-menu-pro-button.responsive-menu-pro-spring.is-active:hover .responsive-menu-pro-inner,
+.responsive-menu-pro-spring.is-active .responsive-menu-pro-inner {
+transition-delay: 0.32s;
+background-color: transparent;
+}
+
+.responsive-menu-pro-spring.is-active .responsive-menu-pro-inner::before {
+top: 0;
+transition: top 0.12s 0.18s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+        transform 0.15s 0.32s cubic-bezier(0.215, 0.61, 0.355, 1);
+transform: translate3d(0,2px, 0) rotate(45deg);
+}
+
+.responsive-menu-pro-spring.is-active .responsive-menu-pro-inner::after {
+top: 0;
+transition: top 0.3s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+        transform 0.15s 0.32s cubic-bezier(0.215, 0.61, 0.355, 1);
+transform: translate3d(0,2px, 0) rotate(-45deg);
+}
+button#responsive-menu-pro-button {
+width:50px;
+height:75px;
+position:fixed;
+top:0px;right:0px;
+display: inline-block;
+transition: transform0.5s, background-color0.5s;         
+background:rgba(59, 59, 59, 1);    }       
+.responsive-menu-pro-open button#responsive-menu-pro-button:hover,
+.responsive-menu-pro-open button#responsive-menu-pro-button:focus,
+button#responsive-menu-pro-button:hover,
+button#responsive-menu-pro-button:focus {
+    background:rgba(59, 59, 59, 1);
+ }        .responsive-menu-pro-open button#responsive-menu-pro-button {
+    background:rgba(255, 255, 255, 1);
+ }
+button#responsive-menu-pro-button .responsive-menu-pro-box {
+color:#ffffff;
+}
+
+.responsive-menu-pro-open button#responsive-menu-pro-button .responsive-menu-pro-box {
+color:rgba(2, 6, 19, 1);
+}
+
+.responsive-menu-pro-label {
+color:#ffffff;
+font-size:9px;
+line-height:14px;            
+font-family: 'Open Sans';    }
+
+.responsive-menu-pro-label .responsive-menu-pro-button-text-open {
+display: none;
+}
+.responsive-menu-pro-fade-top #responsive-menu-pro-container,
+.responsive-menu-pro-fade-left #responsive-menu-pro-container,
+.responsive-menu-pro-fade-right #responsive-menu-pro-container,
+.responsive-menu-pro-fade-bottom #responsive-menu-pro-container {
+display: none;
+}
+#responsive-menu-pro-container {
+width:320px;right: 0;            background:rgba(11, 26, 72, 1);        transition: transform0.5s;
+text-align:left;            max-width:100%;            font-family:'Open Sans';    }
+
+#responsive-menu-pro-container #responsive-menu-pro-wrapper {
+background:rgba(11, 26, 72, 1);
+}
+
+#responsive-menu-pro-container #responsive-menu-pro-additional-content {
+color:#ffffff;
+}
+
+#responsive-menu-pro-container .responsive-menu-pro-search-box {
+background:#ffffff;
+border: 2px solid#dadada;
+color:#333333;
+}
+
+#responsive-menu-pro-container .responsive-menu-pro-search-box:-ms-input-placeholder {
+color:#c7c7cd;
+}
+
+#responsive-menu-pro-container .responsive-menu-pro-search-box::-webkit-input-placeholder {
+color:#c7c7cd;
+}
+
+#responsive-menu-pro-container .responsive-menu-pro-search-box:-moz-placeholder {
+color:#c7c7cd;
+opacity: 1;
+}
+
+#responsive-menu-pro-container .responsive-menu-pro-search-box::-moz-placeholder {
+color:#c7c7cd;
+opacity: 1;
+}
+
+#responsive-menu-pro-container .responsive-menu-pro-item-link,
+#responsive-menu-pro-container #responsive-menu-pro-title,
+#responsive-menu-pro-container .responsive-menu-pro-subarrow {
+transition: background-color0.5s,
+            border-color0.5s,
+            color0.5s;
+}
+
+#responsive-menu-pro-container #responsive-menu-pro-title {
+background-color:rgba(11, 26, 72, 1);
+color:rgba(2, 6, 19, 1);
+font-size:13px;
+text-align:left;
+}
+
+#responsive-menu-pro-container #responsive-menu-pro-title a {
+color:rgba(2, 6, 19, 1);
+font-size:13px;
+text-decoration: none;
+}
+
+#responsive-menu-pro-container #responsive-menu-pro-title a:hover {
+color:rgba(2, 6, 19, 1);
+}
+
+#responsive-menu-pro-container #responsive-menu-pro-title:hover {
+background-color:rgba(11, 26, 72, 1);
+color:rgba(2, 6, 19, 1);
+}
+
+#responsive-menu-pro-container #responsive-menu-pro-title:hover a {
+color:rgba(2, 6, 19, 1);
+}
+
+#responsive-menu-pro-container #responsive-menu-pro-title #responsive-menu-pro-title-image {
+display: inline-block;
+vertical-align: middle;
+max-width: 100%;
+margin-bottom: 15px;
+}
+
+#responsive-menu-pro-container #responsive-menu-pro-title #responsive-menu-pro-title-image img {        max-width: 100%;
+}
+#responsive-menu-pro-container #responsive-menu-pro > li.responsive-menu-pro-item:first-child > a {
+border-top:1px solidrgba(224, 225, 228, 1);
+}
+
+#responsive-menu-pro-container #responsive-menu-pro li.responsive-menu-pro-item .responsive-menu-pro-item-link {
+font-size:14px;
+}
+
+#responsive-menu-pro-container #responsive-menu-pro li.responsive-menu-pro-item a {
+line-height:50px;
+border-bottom:1px solidrgba(224, 225, 228, 1);
+color:rgba(2, 6, 19, 1);
+background-color:rgba(255, 255, 255, 1);            height:50px;    }
+
+#responsive-menu-pro-container #responsive-menu-pro li.responsive-menu-pro-item a:hover {
+color:rgba(2, 6, 19, 1);
+background-color:rgba(245, 246, 248, 1);
+border-color:rgba(224, 225, 228, 1);
+}
+
+#responsive-menu-pro-container #responsive-menu-pro li.responsive-menu-pro-item a:hover .responsive-menu-pro-subarrow {
+color:rgba(2, 6, 19, 1);
+border-color:rgba(255, 255, 255, 1);
+background-color:rgba(255, 255, 255, 1);
+}
+
+#responsive-menu-pro-container #responsive-menu-pro li.responsive-menu-pro-item a:hover .responsive-menu-pro-subarrow.responsive-menu-pro-subarrow-active {
+color:rgba(2, 6, 19, 1);
+border-color:rgba(255, 255, 255, 1);
+background-color:rgba(255, 255, 255, 1);
+}
+
+#responsive-menu-pro-container #responsive-menu-pro li.responsive-menu-pro-item a .responsive-menu-pro-subarrow {right: 0;
+height:50px;
+line-height:50px;
+width:50px;
+color:rgba(2, 6, 19, 1);
+border-left:1px solidrgba(255, 255, 255, 1);
+background-color:rgba(255, 255, 255, 1);
+}
+
+#responsive-menu-pro-container #responsive-menu-pro li.responsive-menu-pro-item a .responsive-menu-pro-subarrow.responsive-menu-pro-subarrow-active {
+color:rgba(2, 6, 19, 1);
+border-color:rgba(255, 255, 255, 1);
+background-color:rgba(255, 255, 255, 1);
+}
+
+#responsive-menu-pro-container #responsive-menu-pro li.responsive-menu-pro-item a .responsive-menu-pro-subarrow.responsive-menu-pro-subarrow-active:hover {
+color:rgba(2, 6, 19, 1);
+border-color:rgba(255, 255, 255, 1);
+background-color:rgba(255, 255, 255, 1);
+}
+
+#responsive-menu-pro-container #responsive-menu-pro li.responsive-menu-pro-item a .responsive-menu-pro-subarrow:hover {
+color:rgba(2, 6, 19, 1);
+border-color:rgba(255, 255, 255, 1);
+background-color:rgba(255, 255, 255, 1);
+}
+
+#responsive-menu-pro-container #responsive-menu-pro li.responsive-menu-pro-item.responsive-menu-pro-current-item > .responsive-menu-pro-item-link {
+background-color:rgba(245, 246, 248, 1);
+color:rgba(2, 6, 19, 1);
+border-color:rgba(224, 225, 228, 1);
+}
+
+#responsive-menu-pro-container #responsive-menu-pro li.responsive-menu-pro-item.responsive-menu-pro-current-item > .responsive-menu-pro-item-link:hover {
+background-color:rgba(245, 246, 248, 1);
+color:rgba(2, 6, 19, 1);
+border-color:rgba(224, 225, 228, 1);
+}        #responsive-menu-pro-container #responsive-menu-pro ul.responsive-menu-pro-submenu li.responsive-menu-pro-item .responsive-menu-pro-item-link {                font-family:'Open Sans';            font-size:14px;
+}
+
+#responsive-menu-pro-container #responsive-menu-pro ul.responsive-menu-pro-submenu li.responsive-menu-pro-item a {                height:50px;            line-height:50px;
+    border-bottom:1px solidrgba(224, 225, 228, 1);
+    color:rgba(2, 6, 19, 1);
+    background-color:rgba(255, 255, 255, 1);
+}
+
+#responsive-menu-pro-container #responsive-menu-pro ul.responsive-menu-pro-submenu li.responsive-menu-pro-item a:hover {
+    color:rgba(2, 6, 19, 1);
+    background-color:rgba(245, 246, 248, 1);
+    border-color:rgba(224, 225, 228, 1);
+}
+
+#responsive-menu-pro-container #responsive-menu-pro ul.responsive-menu-pro-submenu li.responsive-menu-pro-item a:hover .responsive-menu-pro-subarrow {
+    color:rgba(2, 6, 19, 1);
+    border-color:rgba(255, 255, 255, 1);
+    background-color:rgba(255, 255, 255, 1);
+}
+
+#responsive-menu-pro-container #responsive-menu-pro ul.responsive-menu-pro-submenu li.responsive-menu-pro-item a:hover .responsive-menu-pro-subarrow.responsive-menu-pro-subarrow-active {
+    color:rgba(2, 6, 19, 1);
+    border-color:rgba(255, 255, 255, 1);
+    background-color:rgba(255, 255, 255, 1);
+}
+
+#responsive-menu-pro-container #responsive-menu-pro ul.responsive-menu-pro-submenu li.responsive-menu-pro-item a .responsive-menu-pro-subarrow {right: 0;
+    height:50px;
+    line-height:50px;
+    width:50px;
+    color:rgba(2, 6, 19, 1);
+    border-left:1px solidrgba(255, 255, 255, 1);
+    background-color:rgba(255, 255, 255, 1);
+}
+
+#responsive-menu-pro-container #responsive-menu-pro ul.responsive-menu-pro-submenu li.responsive-menu-pro-item a .responsive-menu-pro-subarrow.responsive-menu-pro-subarrow-active {
+    color:rgba(2, 6, 19, 1);
+    border-color:rgba(255, 255, 255, 1);
+    background-color:rgba(255, 255, 255, 1);
+}
+
+#responsive-menu-pro-container #responsive-menu-pro ul.responsive-menu-pro-submenu li.responsive-menu-pro-item a .responsive-menu-pro-subarrow.responsive-menu-pro-subarrow-active:hover {
+    color:rgba(2, 6, 19, 1);
+    border-color:rgba(255, 255, 255, 1);
+    background-color:rgba(255, 255, 255, 1);
+}
+
+#responsive-menu-pro-container #responsive-menu-pro ul.responsive-menu-pro-submenu li.responsive-menu-pro-item a .responsive-menu-pro-subarrow:hover {
+    color:rgba(2, 6, 19, 1);
+    border-color:rgba(255, 255, 255, 1);
+    background-color:rgba(255, 255, 255, 1);
+}
+
+#responsive-menu-pro-container #responsive-menu-pro ul.responsive-menu-pro-submenu li.responsive-menu-pro-item.responsive-menu-pro-current-item > .responsive-menu-pro-item-link {
+    background-color:rgba(245, 246, 248, 1);
+    color:rgba(2, 6, 19, 1);
+    border-color:rgba(224, 225, 228, 1);
+}
+
+#responsive-menu-pro-container #responsive-menu-pro ul.responsive-menu-pro-submenu li.responsive-menu-pro-item.responsive-menu-pro-current-item > .responsive-menu-pro-item-link:hover {
+    background-color:rgba(245, 246, 248, 1);
+    color:rgba(2, 6, 19, 1);
+    border-color:rgba(224, 225, 228, 1);
+}
+}
+ 
+
+.therpay{
+    text-align: center;
+}
+ 
+
+

@@ -1,0 +1,132 @@
+﻿@model KitoKidsFYP.Areas.Admin.ViewModels.ClusterFruitLevel1ViewModel
+@{
+    ViewData["Title"] = "Create Cluster Of Fruit Level One";
+}
+
+<br />
+
+<div class="text-center">
+    <h1 class="display-4">Create Cluster Of Fruit Level One</h1>
+</div>
+
+<br />
+<br />
+
+
+
+<form method="post" asp-action="CreateClasterFruitLevelOne" asp-area="Admin" enctype="multipart/form-data">
+
+    <div id="questionSection" class="container">
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+
+
+        <div class="border container bg-light" style="padding:30px; border-radius:20px;">
+            <div class="form-group row">
+                <div class="col-2">
+                    <label class="col-form-label">Question</label>
+                </div>
+
+                <div class="col-10">
+                    @*<label class="col-form-label">Select File</label>*@
+
+                    <input asp-for="Question" accept="audio/mp3,audio/*;capture=microphone" class="form-control" />
+                    <span asp-validation-for="Question" class="text-danger"></span>
+
+                </div>
+            </div>
+
+            <br /><br />
+
+            <div class="form-group row  ">
+                <div class="col-1"></div>
+
+                <div class="col-1" style="text-align:right">
+                    <label>A) </label>
+                </div>
+
+                <div class="col-4">
+                    <input class="form-control" accept="image/png, image/gif, image/jpeg" asp-for="OptionA" />
+                    <span asp-validation-for="OptionA" class="text-danger"></span>
+
+                </div>
+
+                <div class="col-1"></div>
+
+                <div class="col-1" style="text-align:right">
+                    <label>B) </label>
+                </div>
+
+                <div class="col-4">
+                    <input class="form-control" accept="image/png, image/gif, image/jpeg" asp-for="OptionB" />
+                    <span asp-validation-for="OptionB" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row mt-2">
+                <div class="col-1"></div>
+
+                <div class="col-1" style="text-align:right">
+                    <label>C) </label>
+                </div>
+
+                <div class="col-4">
+                    <input class="form-control" accept="image/png, image/gif, image/jpeg" asp-for="OptionC" />
+                    <span asp-validation-for="OptionC" class="text-danger"></span>
+                </div>
+
+                <div class="col-1"></div>
+
+                <div class="col-1" style="text-align:right">
+                    <label>D) </label>
+                </div>
+
+                <div class="col-4">
+                    <input class="form-control" accept="image/png, image/gif, image/jpeg" asp-for="OptionD" />
+                    <span asp-validation-for="OptionD" class="text-danger"></span>
+                </div>
+            </div>
+
+            <br /><br />
+
+            <div class="form-group row">
+                <div class="col-3 offset-5" style="text-align:right">
+                    <label>Select the correct answer: </label>
+                </div>
+
+                <div class="col-4">
+                    @* @Html.DropDownListFor(m => m.CorrectAnswer,
+                    new SelectList(new List<string> { "A", "B", "C", "D" }),
+                    "-- Correct Answer --",
+                    new { @class = "form-control" })*@
+
+                    <select class="form-control" asp-for="CorrectAnswer" type="text" name="CorrectAnswer">
+                        <option> -- Correct Answer --</option>
+                        <option value="A">A </option>
+                        <option value="B">B </option>
+                        <option value="C">C </option>
+                        <option value="D">D </option>
+                    </select>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br /><br />
+
+    <div class="form-group row">
+        <div class="col-4 offset-4">
+            <button type="submit" class="btn btn-info form-control">Submit Level One</button>
+        </div>
+    </div>
+
+
+
+
+</form>
+
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/js/Quiz.js"></script>
+}
