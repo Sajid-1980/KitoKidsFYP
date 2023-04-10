@@ -71,7 +71,7 @@
     <script>
 
         window.addEventListener('load', function () {
-            var audio = new Audio('/Files/letsPlay.mp3');
+            var audio = new Audio('/Files/memory.mp3');
             audio.play();
         });
 
@@ -86,8 +86,9 @@
          
 
         let count = 0;
- 
-       
+
+        var correctCards = 0;
+
        
 
 
@@ -116,7 +117,7 @@
 
                 setInterval(() => {
                     front[i].classList.remove('show')
-                }, 2000);
+                }, 3000);
 
                 card[i].addEventListener('click', () => {
 
@@ -133,7 +134,8 @@
                         }, 1000);
                          
                         match(filppedCard[0], filppedCard[1])
-                        
+                       
+
                         
                     }
                 })
@@ -156,8 +158,9 @@
 
                 cardOne.classList.add('match')
                 cardTwo.classList.add('match')
-               
-               
+
+                correctCards ++;
+
               
 
             } 
@@ -175,6 +178,8 @@
  
            
         }
+
+        
 
 
 

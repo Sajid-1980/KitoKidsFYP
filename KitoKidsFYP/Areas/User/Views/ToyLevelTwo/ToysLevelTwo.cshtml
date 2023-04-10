@@ -1,0 +1,261 @@
+﻿@model KitoKidsFYP.Areas.Admin.Models.ToysLevel2
+@{
+    ViewData["Title"] = "Level One";
+
+    Layout = "~/Areas/User/Views/Shared/_LayoutLevel.cshtml";
+}
+
+<br />
+<br />
+
+
+
+<div class="container row ">
+
+
+    @*    <div class="border container col-5 bg-light " id="QuizDiv" style="padding:30px; border-radius:20px; margin-bottom:20px;">
+
+
+    <div class="form-group row">
+    <label> Question : <span id="Question"></span></label>
+    <input type="hidden" id="QuestionId" />
+    </div>
+    <br />
+
+    <div>
+
+    <label style="overflow:hidden;" for="A" onclick="answerOnClick('A')" class="form-control custom mt-2 questionA">A)<span id="questionA"></span> </label>
+    <label style="overflow:hidden;" for="B" onclick="answerOnClick('B')" class="form-control custom mt-2 questionB">B)<span id="questionB"></span></label>
+    <label style="overflow:hidden;" for="C" onclick="answerOnClick('C')" class="form-control custom mt-2 questionC">C)<span id="questionC"></span></label>
+    <label style="overflow:hidden;" for="D" onclick="answerOnClick('D')" class="form-control custom mt-2 questionD">D)<span id="questionD"></span> </label>
+
+    </div>
+    <button class="btn btn-primary mt-2" onclick="ShowNewQuestion()" style="float:right">Next</button>
+
+    </div>*@
+
+    <div class="border container col-8 " id="QuizDiv" style="padding:66px; border-radius:23px 75px; background-color:#E1F5FE; width:700px;  margin-bottom:20px;">
+
+        <div class="d-none">
+
+            <audio class="form-control" id="QuestionAudio" controls>
+
+                <source class="QuestionSource" src="" type="audio/ogg">
+                <source class="QuestionSource" src="" type="audio/mpeg">
+                Your browser does not support the audio tag.
+            </audio>
+
+
+            <input type="hidden" id="QuestionId" />
+        </div>
+
+
+        <div class="row imageview" id="ABDiv">
+            <label id="optionALabel" class="form-control  col custom mt-2 questionA" style="overflow:hidden;margin-right:3px;" for="A" onclick="answerOnClick('A')">
+                @* <span class="textspan" id="questionA"></span> *@
+                <img class="img-avatar imgTag" id="questionA" alt="Image" />
+            </label>
+            <label id="optionBLabel" style="overflow:hidden;" for="B" onclick="answerOnClick('B')" class=" form-control col custom mt-2 questionB">
+                @*<span class="textspan" id="questionB"></span>*@
+                <img class="img-avatar imgTag" id="questionB" alt="Image" />
+            </label>
+        </div>
+        <div class="row mt-2 imageview" id="CDDiv">
+            <label id="optionCLabel" style="overflow:hidden;margin-right:3px" for="C" onclick="answerOnClick('C')" class=" form-control col custom mt-2 questionC">
+
+                @*<span class="textspan" id="questionC"></span>*@
+                <img class="img-avatar imgTag" id="questionC" alt="Image" />
+            </label>
+            <label id="optionDLabel" style="overflow:hidden;" for="D" onclick="answerOnClick('D')" class=" form-control col  custom mt-2 questionD">
+                <img class="img-avatar imgTag" id="questionD" alt="Image" />
+            </label>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-8 mt-2">  <span id="QuestionNo"></span> of <span id="QuestionTotal"></span> Question</div>
+            <div class="col-4">
+                <button class="btn btn-primary" onclick="ShowNewQuestion()" style="float:right">Next</button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="border container col-5 bg-light d-none" id="ScoreDiv" style="padding:30px; border-radius:20px; margin-bottom:20px;">
+
+
+        <div class="result-box inactive">
+            <h2 class="text-center">Result </h2>
+            <div class="result">
+                <h3 class="sou-ans">Your Source : <span id="SouAnswers"></span></h3>
+                <h4 class="total-que">Total Questions : <span id="totalQuestion"></span></h4>
+                <h4 class="right-ans">Right Answers : <span id="RightAnswers"></span></h4>
+                <h4 class="wrong-ans">Wrong Answers : <span id="WrongAnswers"></span></h4>
+                <h4 class="percentage">Percentage : <span id="Percentage"></span></h4>
+            </div>
+            <div class="result-footer">
+
+                <a href="/User/ToyLevelOne/ToysLevelOne" class="col-4 btn btn-primary">Play Again</a>
+                <a href="/User/ToyData/Index" class="col-4 btn btn-primary" style="float:right"> Exit</a>
+
+                @* <a class="nav-link btn btn-primary" asp-area="User" asp-controller="LevelOne" asp-action="TakeQuiz">TakeQuiz</a>
+                <a class="nav-link text-dark" asp-area="User" asp-controller="Users" asp-action="Index">Exist</a>*@
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+</div>
+
+
+
+
+
+@section Scripts{
+    <script>
+
+        var soundCorrect = new Audio('/Files/rightt.mp3');
+        var soundInCorrect = new Audio('/Files/wrong.mp3');
+
+
+
+        var AnswerSelect = false;
+        var StopInterval = false;
+        $(document).ready(function () {
+            ShowNewQuestion();
+
+        });
+        var QuestionNo = 0;
+        var QuestionsData = @Json.Serialize(ViewBag.Questions);
+        function answerOnClick(answer) {
+            if (!AnswerSelect) {
+                AnswerSelect = true;
+
+                var QuestionId = $("#QuestionId").val();
+                var QuestionObj = QuestionsData.find(x => x.id == QuestionId);
+                if (QuestionObj.correctAnswer == answer) {
+                    soundCorrect.play();
+
+
+                    $(".question" + answer).addClass("trueColour");
+                    QuestionObj.correctSelected = true;
+                }
+                else {
+                    QuestionObj.correctSelected = false;
+                    soundInCorrect.play();
+
+                    $(".question" + answer).addClass("badColour");
+                    $(".question" + QuestionObj.correctAnswer).addClass("trueColour");
+                }
+            }
+        }
+        function ShowNewQuestion() {
+            var QuestionId = $("#QuestionId").val();
+            if (QuestionId < 1 || AnswerSelect) {
+
+                var QuestionObj = {};
+
+                if (QuestionId < QuestionsData[QuestionsData.length - 1].id) {
+                    ClearForm();
+                    QuestionNo = QuestionNo + 1;
+                    $("#QuestionNo").empty();
+                    $("#QuestionNo").text(QuestionNo);
+                    $("#QuestionTotal").empty();
+                    $("#QuestionTotal").text(QuestionsData.length);
+                    if (QuestionId < 1) {
+                        QuestionObj = QuestionsData[0];
+                    }
+                    else {
+                        QuestionId = parseInt(QuestionId) + 1;
+                        QuestionObj = QuestionsData.find(x => x.id == QuestionId);
+                    }
+
+
+                    $("#Question").text(QuestionObj.questionText);
+
+
+                    $(".QuestionSource").attr('src', QuestionObj.questionText);//.attr.src=QuestionObj.questionText;
+                    var audio = document.getElementById('QuestionAudio');
+                    audio.load();
+                    audio.play();
+                    SetInterval();
+                    $("#QuestionId").val(QuestionObj.id)
+                    $("#questionA").attr('src', QuestionObj.optionA);//text(QuestionObj.optionA);
+                    $("#questionB").attr('src', QuestionObj.optionB);//text(QuestionObj.optionA);
+                    $("#questionC").attr('src', QuestionObj.optionC);//text(QuestionObj.optionA);
+                    $("#questionD").attr('src', QuestionObj.optionD);//text(QuestionObj.optionA);
+
+                }
+                else {
+                    try {
+                        var audio = document.getElementById('QuestionAudio');
+                        audio.pause();
+                        StopInterval = true;
+                    }
+                    catch (err) {
+                    }
+                    $("#totalQuestion").text(QuestionsData.length);
+                    var CorrectAnswer = 0;
+                    var CountSource = 0;
+                    for (var i = 0; i < QuestionsData.length; i++) {
+                        if (QuestionsData[i].correctSelected) {
+                            CorrectAnswer = CorrectAnswer + 1;
+                            CountSource = CountSource + 5;
+                        }
+                    }
+                    $("#RightAnswers").text(CorrectAnswer);
+                    $("#SouAnswers").text(CountSource);
+
+                    $("#WrongAnswers").text(QuestionsData.length - CorrectAnswer);
+                    $("#Percentage").text(((CorrectAnswer / QuestionsData.length) * 100).toFixed(2));
+                    $("#ScoreDiv").removeClass("d-none");
+                    $("#QuizDiv").addClass("d-none");
+                }
+            }
+            else {
+                alert("Select One Answer");
+            }
+        }
+        function ClearForm() {
+            AnswerSelect = false;
+            $("#Question").text("");
+            $("#QuestionId").val("0");
+
+
+            $(".questionA").removeClass("trueColour");
+            $(".questionB").removeClass("trueColour");
+            $(".questionC").removeClass("trueColour");
+            $(".questionD").removeClass("trueColour");
+            $(".questionA").removeClass("badColour");
+            $(".questionB").removeClass("badColour");
+            $(".questionC").removeClass("badColour");
+            $(".questionD").removeClass("badColour");
+
+
+        }
+        function SetInterval() {
+
+            window.setInterval(function () {
+                if (!StopInterval) {
+                    try {
+                        var audio = document.getElementById('QuestionAudio');
+                        audio.load();
+                        audio.play();
+                    }
+                    catch (e) {
+
+                    }
+                }
+
+            }, 30000);
+        }
+
+
+
+
+    </script>
+ }

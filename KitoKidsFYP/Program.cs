@@ -40,12 +40,14 @@ builder.Services.AddControllersWithViews().AddRazorPagesOptions(options => {
 //Models Scoped Define
 builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.Models.ClusterFruitLevel1>();
 builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.Models.ToysLevel1>();
+builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.Models.ToysLevel2>();
 builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.Models.AlphaLevel1>();
 builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.Models.ClusterFruitLevel2>();
 
 
 builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.ViewModels.ClusterFruitLevel1ViewModel>();
 builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.ViewModels.ToyLevel1ViewModel>();
+builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.ViewModels.ToyLevel2ViewModel>();
 builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.ViewModels.AlphaLevel1ViewModel>();
 builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.ViewModels.ClusterFruitLevel2ViewModel>();
 
