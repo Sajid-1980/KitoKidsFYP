@@ -147,6 +147,25 @@ namespace KitoKidsFYP.Areas.Admin.Controllers
 
         }
 
+        //=================================
+        //           LevelTwo
+        //=================================
+
+
+        public IActionResult ToyLevelTwoIndex()
+        {
+            return View();
+        }
+
+         
+
+
+        public async Task<IActionResult> CreateToyLevelTwo()
+        {
+            return View();
+
+        }
+
 
     }
 }
