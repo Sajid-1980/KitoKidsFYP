@@ -228,10 +228,9 @@
 
         <div id="successMessage">
             <h2>You did it!</h2>
-@*            <div class="score">Right Answers : <span>0</span></div>
-*@           
-<div class="score1">Wrong Answers : <span>0</span></div>
-            
+            <div class="score1">Wrong Answers : <span>0</span></div>
+           
+             
             <button class="btn btn-primary" onclick="init()">Play Again</button>
         </div>
 
@@ -243,7 +242,7 @@
         var soundInCorrect = new Audio('/Files/wrong.mp3');
         var playTheGame = new Audio('/Files/improvethealpha.mp3');
         playTheGame.play();
-        const score = document.querySelector('.score span');
+        //const score = document.querySelector('.score span');
         const score1 = document.querySelector('.score1 span');
 
 
@@ -314,7 +313,7 @@
                 ui.draggable.draggable('option', 'revert', false);
                 correctCards++;
                 console.log(correctCards);
-                score.innerHTML = parseInt(score.innerHTML) + 1;
+                //score.innerHTML = parseInt(score.innerHTML) + 1;
             }
             else{
                 soundInCorrect.play();
