@@ -4,6 +4,7 @@ using KitoKidsFYP.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KitoKidsFYP.Migrations
 {
     [DbContext(typeof(KitoKidsFYPContext))]
-    partial class KitoKidsFYPContextModelSnapshot : ModelSnapshot
+    [Migration("20230507102325_newidu")]
+    partial class newidu
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -174,16 +177,20 @@ namespace KitoKidsFYP.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("QuestionAudio")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("QuestionText")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("ClusterFruitsLevel3s");
+                    b.ToTable("ClusterFruitLevel3s");
                 });
 
-            modelBuilder.Entity("KitoKidsFYP.Areas.Admin.Models.Level3Cluster", b =>
+            modelBuilder.Entity("KitoKidsFYP.Areas.Admin.Models.ClusterFruitLevel4", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -203,7 +210,11 @@ namespace KitoKidsFYP.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("QuestionAudio")
+                    b.Property<string>("OptionC")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OptionD")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -213,7 +224,7 @@ namespace KitoKidsFYP.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Level3Clusters");
+                    b.ToTable("ClusterFruitLevel4s");
                 });
 
             modelBuilder.Entity("KitoKidsFYP.Areas.Admin.Models.ToysLevel1", b =>

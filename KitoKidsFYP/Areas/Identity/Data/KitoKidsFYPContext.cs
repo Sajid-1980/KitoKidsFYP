@@ -26,7 +26,17 @@ public class KitoKidsFYPContext : IdentityDbContext<ApplicationUser>
 
     //Level 2
     public DbSet<ClusterFruitLevel2>   ClusterFruitLevel2s { get; set; } 
- 
+    public DbSet<ClusterFruitLevel3>   ClusterFruitsLevel3s { get; set; }
+
+
+
+
+    // Level 3
+    public DbSet<Level3Cluster>   Level3Clusters { get; set; }
+
+
+
+
 
 
 }

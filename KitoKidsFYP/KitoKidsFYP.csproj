@@ -28,7 +28,6 @@
 
   <ItemGroup>
     <Folder Include="Areas\User\Models\" />
-    <Folder Include="wwwroot\imgAudios\" />
     <Folder Include="wwwroot\alphaimg\" />
   </ItemGroup>
 
@@ -220,6 +219,11 @@
     <None Include="wwwroot\dataTable\DataTables-1.13.1\js\dataTables.semanticui.min.js" />
     <None Include="wwwroot\dataTable\DataTables-1.13.1\js\jquery.dataTables.js" />
     <None Include="wwwroot\dataTable\DataTables-1.13.1\js\jquery.dataTables.min.js" />
+    <None Include="wwwroot\icons\brush.svg" />
+    <None Include="wwwroot\icons\circle.svg" />
+    <None Include="wwwroot\icons\eraser.svg" />
+    <None Include="wwwroot\icons\rectangle.svg" />
+    <None Include="wwwroot\icons\triangle.svg" />
   </ItemGroup>
 
   <ItemGroup>

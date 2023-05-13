@@ -43,6 +43,9 @@ builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.Models.ToysLevel1>();
 builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.Models.ToysLevel2>();
 builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.Models.AlphaLevel1>();
 builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.Models.ClusterFruitLevel2>();
+builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.Models.ClusterFruitLevel3>();
+builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.Models.ClusterFruitLevel4>();
+builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.Models.Level3Cluster>();
 
 
 builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.ViewModels.ClusterFruitLevel1ViewModel>();
@@ -50,7 +53,9 @@ builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.ViewModels.ToyLevel1ViewModel
 builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.ViewModels.ToyLevel2ViewModel>();
 builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.ViewModels.AlphaLevel1ViewModel>();
 builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.ViewModels.ClusterFruitLevel2ViewModel>();
-
+builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.ViewModels.ClusterFruitLevel3ViewModel>();
+builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.ViewModels.LevelVm>();
+ 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

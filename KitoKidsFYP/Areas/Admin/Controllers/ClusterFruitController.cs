@@ -207,5 +207,111 @@ namespace KitoKidsFYP.Areas.Admin.Controllers
             return Json(new { data = fruitlist });
         }
 
+
+
+        // Level 3
+
+
+        public async Task<IActionResult> ClusterIndexLevel3()
+        {
+            return View();
+
+        }
+
+        public async Task<IActionResult> CreateClasterFruitLevelTwo()
+        {
+            return View();
+
+        }
+
+        
+
+
+        //public async Task<IActionResult> CreateClusterLevelThree()
+        //{
+        //    return View();
+
+        //}
+
+        //[HttpPost]
+        //[ActionName("CreateClusterLevelThree")]
+        //public async Task<IActionResult> CreateClusterLevelThree(ClusterFruitLevel3ViewModel vm)
+        //{
+        //    var ShortPath = "wwwroot/Files";
+        //    string path = Path.Combine(Directory.GetCurrentDirectory(), ShortPath);
+             
+
+        //    ClusterFruitLevel3 _question = new ClusterFruitLevel3();
+
+        //    _question.QuestionText = vm.Question;
+
+
+        //    //create folder if not exist
+        //    if (!Directory.Exists(path))
+        //        Directory.CreateDirectory(path);
+        //    Guid Random = Guid.NewGuid();
+        //    string FilePath = Path.Combine(path, (Random + "___" + vm.QuestionAud.FileName));
+
+        //    using (var stream = new FileStream(FilePath, FileMode.Create))
+        //    {
+        //        await vm.QuestionAud.CopyToAsync(stream);
+        //    }
+        //    ShortPath = "/Files";
+        //    _question.QuestionAudio = ShortPath + "/" + Random + "___" + vm.QuestionAud.FileName;
+
+
+
+          
+        //    _question.OptionA = vm.OptionA;
+        //    _question.OptionB = vm.OptionB;
+             
+        //    _question.CorrectAnswer = vm.CorrectAnswer;
+
+        //    _context.Add(_question);
+        //    await _context.SaveChangesAsync();
+
+        //    return LocalRedirect("/Admin/ClusterFruit/ClusterIndexLevel3");
+
+        //}
+
+
+
+
+        public async Task<IActionResult> CreateLevel3()
+        {
+            return View();
+
+        }
+
+
+        [HttpPost]
+         public async Task<IActionResult>  Level4(ClusterFruitLevel4ViewModel vm)
+        {
+             
+            ClusterFruitLevel3 _question = new ClusterFruitLevel3();
+            //create folder if not exist
+           
+            _question.QuestionText =  vm.Question;
+
+
+            _question.OptionA = vm.OptionA;
+            _question.OptionB = vm.OptionB;
+             
+            _question.CorrectAnswer = vm.CorrectAnswer;
+
+            _context.Add(_question);
+            await _context.SaveChangesAsync();
+
+            return LocalRedirect("/Admin/ClusterFruit/ClusterIndexLevel3");
+
+        }
+
+
+        public JsonResult TableLevel3()
+        {
+            var fruitlist = _context.ClusterFruitsLevel3s.ToList();
+            return Json(new { data = fruitlist });
+        }
+
     }
 }

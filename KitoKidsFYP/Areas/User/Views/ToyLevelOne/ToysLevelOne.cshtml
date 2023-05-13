@@ -10,7 +10,7 @@
  
  
 
-    <div class="container row ">
+   
 
 
         @*    <div class="border container col-5 bg-light " id="QuizDiv" style="padding:30px; border-radius:20px; margin-bottom:20px;">
@@ -34,7 +34,12 @@
 
         </div>*@
 
-    <div class="border container col-8 " id="QuizDiv" style="padding:30px; border-radius:23px 75px; background-color:#E1F5FE;  margin-bottom:20px;">
+
+<div class="container row">
+
+    <div class="quiz-box">
+        <div class="" id="QuizDiv">
+     
 
             <div class="d-none">
 
@@ -82,12 +87,12 @@
 
 
 
-        <div class="border container col-5 bg-light d-none" id="ScoreDiv" style="padding:30px; border-radius:20px; margin-bottom:20px;">
+
+        <div class="d-none" id="ScoreDiv">
 
 
-            <div class="result-box inactive">
-                <h2 class="text-center">Result </h2>
-                <div class="result">
+            <h2 class="text-center">Result </h2>
+            <div class="result">
                 <h3 class="sou-ans">Your Source : <span id="SouAnswers"></span></h3>
                 <h4 class="total-que">Total Questions : <span id="totalQuestion"></span></h4>
                     <h4 class="right-ans">Right Answers : <span id="RightAnswers"></span></h4>
@@ -98,24 +103,21 @@
 
                 <a href="/User/ToyLevelOne/ToysLevelOne" class="col-4 btn btn-primary">Play Again</a>
                 <a href="/User/ToyData/Index" class="col-4 btn btn-primary" style="float:right"> Exit</a>
-                               
-               @* <a class="nav-link btn btn-primary" asp-area="User" asp-controller="LevelOne" asp-action="TakeQuiz">TakeQuiz</a>
-                <a class="nav-link text-dark" asp-area="User" asp-controller="Users" asp-action="Index">Exist</a>*@
-                </div>
+
+
+
+
             </div>
 
+
         </div>
-
-
-
-
     </div>
+</div>
 
 
- 
+   
 
-
-@section Scripts{
+    @section Scripts{
     <script>
 
         var soundCorrect = new Audio('/Files/rightt.mp3');

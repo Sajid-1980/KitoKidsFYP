@@ -10,33 +10,14 @@
 
 
 
-<div class="container row ">
+ 
 
+<div class="container row">
 
-    @*    <div class="border container col-5 bg-light " id="QuizDiv" style="padding:30px; border-radius:20px; margin-bottom:20px;">
+    <div class="quiz-box">
+        <div class="" id="QuizDiv">
 
-
-    <div class="form-group row">
-    <label> Question : <span id="Question"></span></label>
-    <input type="hidden" id="QuestionId" />
-    </div>
-    <br />
-
-    <div>
-
-    <label style="overflow:hidden;" for="A" onclick="answerOnClick('A')" class="form-control custom mt-2 questionA">A)<span id="questionA"></span> </label>
-    <label style="overflow:hidden;" for="B" onclick="answerOnClick('B')" class="form-control custom mt-2 questionB">B)<span id="questionB"></span></label>
-    <label style="overflow:hidden;" for="C" onclick="answerOnClick('C')" class="form-control custom mt-2 questionC">C)<span id="questionC"></span></label>
-    <label style="overflow:hidden;" for="D" onclick="answerOnClick('D')" class="form-control custom mt-2 questionD">D)<span id="questionD"></span> </label>
-
-    </div>
-    <button class="btn btn-primary mt-2" onclick="ShowNewQuestion()" style="float:right">Next</button>
-
-    </div>*@
-
-    <div class="border container col-8 " id="QuizDiv" style="padding:66px; border-radius:23px 75px; background-color:#E1F5FE; width:700px;  margin-bottom:20px;">
-
-        <div class="d-none">
+            <div class="d-none">
 
             <audio class="form-control" id="QuestionAudio" controls>
 
@@ -82,10 +63,9 @@
 
 
 
-    <div class="border container col-5 bg-light d-none" id="ScoreDiv" style="padding:30px; border-radius:20px; margin-bottom:20px;">
+        <div class="d-none" id="ScoreDiv">
 
 
-        <div class="result-box inactive">
             <h2 class="text-center">Result </h2>
             <div class="result">
                 <h3 class="sou-ans">Your Source : <span id="SouAnswers"></span></h3>
@@ -101,15 +81,14 @@
 
                 @* <a class="nav-link btn btn-primary" asp-area="User" asp-controller="LevelOne" asp-action="TakeQuiz">TakeQuiz</a>
                 <a class="nav-link text-dark" asp-area="User" asp-controller="Users" asp-action="Index">Exist</a>*@
+                </div>
+
+
             </div>
         </div>
-
     </div>
 
 
-
-
-</div>
 
 
 
