@@ -20,6 +20,7 @@ namespace KitoKidsFYP.Areas.User.Controllers
             return View();
         }
 
+        [HttpGet]
         public async Task<IActionResult>  FruitLevelOne()
         {
 
