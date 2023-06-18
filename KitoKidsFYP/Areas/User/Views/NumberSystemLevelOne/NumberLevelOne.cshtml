@@ -1,4 +1,4 @@
-﻿@model KitoKidsFYP.Areas.Admin.Models.NumberSystemLevel1
+﻿@model KitoKidsFYP.Areas.Admin.Models.NumbersSystemLevel1
 @{
     ViewData["Title"] = "Level One";
 
@@ -16,6 +16,19 @@
     <div class="quiz-box">
         <div class="" id="QuizDiv">
 
+            <div>
+
+            <div class="d-none">
+
+                <audio class="form-control" id="QuestionAudio" controls>
+
+                    <source class="QuestionSource" src="" type="audio/ogg">
+                    <source class="QuestionSource" src="" type="audio/mpeg">
+                    Your browser does not support the audio tag.
+                </audio>
+ 
+                
+            </div>
 
             <div class="form-group row imageview">
 
@@ -26,11 +39,12 @@
 
                 </div>
                 <div class="col-md-"></div>
+ 
+            </div>
 
-
-
-
+          
                 <input type="hidden" id="QuestionId" />
+
             </div>
             <br />
 
@@ -63,8 +77,8 @@
             </div>
             <div class="result-footer">
 
-                <a href="/User/AlphabetLevelOne/AlphabetsLevelOne" class="col-4 btn btn-primary">Play Again</a>
-                <a href="/User/AlphabetsData/Index" class="col-4 btn btn-primary" style="float:right"> Exit</a>
+                <a href="/User/NumberSystemLevelOne/NumberLevelOne" class="col-4 btn btn-primary">Play Again</a>
+                <a href="/User/NumberSystemLevelOne/Index" class="col-4 btn btn-primary" style="float:right"> Exit</a>
 
 
             </div>
@@ -136,14 +150,24 @@
                         QuestionObj = QuestionsData.find(x => x.id == QuestionId);
                     }
 
+ 
 
-                    $("#QuestionId").val(QuestionObj.id)
+                    $("#QuestionId").val(QuestionObj.id);
+                   
+                    
 
-                    $("#Question").attr('src', QuestionObj.questionText);//text(QuestionObj.optionA);
+                    $("#Question").attr('src', QuestionObj.questionText); 
+                    
                     $("#questionA").text(QuestionObj.optionA);
                     $("#questionB").text(QuestionObj.optionB);
                     $("#questionC").text(QuestionObj.optionC);
                     $("#questionD").text(QuestionObj.optionD);
+
+                    $(".QuestionSource").attr('src', QuestionObj.questionAudios);//.attr.src=QuestionObj.questionText;
+                    var audio = document.getElementById('QuestionAudio');
+                    audio.load();
+                    audio.play();
+                    SetInterval();
                 }
                 else {
                     $("#totalQuestion").text(QuestionsData.length);

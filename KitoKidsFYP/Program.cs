@@ -46,7 +46,7 @@ builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.Models.ClusterFruitLevel2>();
 builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.Models.ClusterFruitLevel3>();
 builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.Models.ClusterFruitLevel4>();
 builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.Models.Level3Cluster>();
-builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.Models.NumberSystemLevel1>();
+builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.Models.NumbersSystemLevel1>();
  
 
 builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.ViewModels.ClusterFruitLevel1ViewModel>();

@@ -2,7 +2,7 @@
 
 namespace KitoKidsFYP.Areas.Admin.Models
 {
-    public class NumberSystemLevel1
+    public class NumbersSystemLevel1
     {
         [Key]
         public int Id { get; set; }

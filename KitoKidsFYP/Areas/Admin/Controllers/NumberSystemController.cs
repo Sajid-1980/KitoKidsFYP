@@ -33,7 +33,7 @@ namespace KitoKidsFYP.Areas.Admin.Controllers
         {
             var ShortPath = "wwwroot/alphaimg";
             string path = Path.Combine(Directory.GetCurrentDirectory(), ShortPath);
-            NumberSystemLevel1 _question = new NumberSystemLevel1();
+            NumbersSystemLevel1 _question = new NumbersSystemLevel1();
             //create folder if not exist
             if (!Directory.Exists(path))
                 Directory.CreateDirectory(path);
@@ -70,7 +70,7 @@ namespace KitoKidsFYP.Areas.Admin.Controllers
 
         public JsonResult AlphabetTable()
         {
-            var alphabetsList = _context.NumberSystemLevels.ToList();
+            var alphabetsList = _context.Levelone.ToList();
             return Json(new { data = alphabetsList });
         }
 

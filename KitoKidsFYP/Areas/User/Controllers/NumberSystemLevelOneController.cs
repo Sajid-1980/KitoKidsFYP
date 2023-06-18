@@ -23,7 +23,7 @@ namespace KitoKidsFYP.Areas.User.Controllers
         public async Task<IActionResult> NumberLevelOne()
         {
 
-            ViewBag.Questions = _context.NumberSystemLevels.ToList();
+            ViewBag.Questions = _context.Levelone.ToList();
             return View();
 
         }
