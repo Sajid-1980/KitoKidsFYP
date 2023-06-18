@@ -1,0 +1,191 @@
+﻿@model KitoKidsFYP.Areas.Admin.Models.NumberSystemLevel1
+@{
+    ViewData["Title"] = "Level One";
+
+    Layout = "~/Areas/User/Views/Shared/_LayoutLevel.cshtml";
+}
+
+
+
+
+<br />
+<br />
+
+<div class="container row">
+
+    <div class="quiz-box">
+        <div class="" id="QuizDiv">
+
+
+            <div class="form-group row imageview">
+
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+
+                    <img class="img-avatar imgTag" id="Question" alt="Image" />
+
+                </div>
+                <div class="col-md-"></div>
+
+
+
+
+                <input type="hidden" id="QuestionId" />
+            </div>
+            <br />
+
+            <div>
+
+                <label style="overflow:hidden; text-align:center; font-weight:bold;" for="A" onclick="answerOnClick('A')" class="form-control custom mt-2 questionA"><span id="questionA"></span> </label>
+                <label style="overflow:hidden; text-align:center;font-weight:bold;" for="B" onclick="answerOnClick('B')" class="form-control custom mt-2 questionB"><span id="questionB"></span></label>
+                <label style="overflow:hidden; text-align:center;font-weight:bold;" for="C" onclick="answerOnClick('C')" class="form-control custom mt-2 questionC"><span id="questionC"></span></label>
+                <label style="overflow:hidden; text-align:center;font-weight:bold;" for="D" onclick="answerOnClick('D')" class="form-control custom mt-2 questionD"><span id="questionD"></span> </label>
+
+            </div>
+            <button class="btn btn-primary  mt-2" onclick="ShowNewQuestion()" style="float:right">Next</button>
+
+        </div>
+
+
+
+        <div class="d-none" id="ScoreDiv">
+
+
+            <h2 class="text-center">Result </h2>
+            <div class="result">
+
+                <h3 class="sou-ans">Your Source : <span id="SouAnswers"></span></h3>
+
+                <h3 class="total-que">Total Questions : <span id="totalQuestion"></span></h3>
+                <h3 class="right-ans">Right Answers : <span id="RightAnswers"></span></h3>
+                <h3 class="wrong-ans">Wrong Answers : <span id="WrongAnswers"></span></h3>
+                <h3 class="percentage">Percentage : <span id="Percentage"></span></h3>
+            </div>
+            <div class="result-footer">
+
+                <a href="/User/AlphabetLevelOne/AlphabetsLevelOne" class="col-4 btn btn-primary">Play Again</a>
+                <a href="/User/AlphabetsData/Index" class="col-4 btn btn-primary" style="float:right"> Exit</a>
+
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+@section Scripts{
+    <script>
+
+        var soundCorrect = new Audio('/Files/rightt.mp3');
+        var soundInCorrect = new Audio('/Files/wrong.mp3');
+
+
+
+
+        var AnswerSelect = false;
+        $(document).ready(function () {
+            ShowNewQuestion();
+        });
+        var QuestionsData = @Json.Serialize(ViewBag.Questions);
+        function answerOnClick(answer) {
+            if (!AnswerSelect) {
+                AnswerSelect = true;
+                debugger;
+                var QuestionId = $("#QuestionId").val();
+                var QuestionObj = QuestionsData.find(x => x.id == QuestionId);
+                if (QuestionObj.correctAnswer == answer) {
+
+                    soundCorrect.play();
+
+                    $(".question" + answer).addClass("trueColour");
+                    QuestionObj.correctSelected = true;
+                }
+                else {
+
+                    QuestionObj.correctSelected = false;
+                    soundInCorrect.play();
+
+                    $(".question" + answer).addClass("badColour");
+                    $(".question" + QuestionObj.correctAnswer).addClass("trueColour");
+                }
+            }
+        }
+        function ShowNewQuestion() {
+            var QuestionId = $("#QuestionId").val();
+            if (QuestionId < 1 || AnswerSelect) {
+
+                var QuestionObj = {};
+
+                if (QuestionId < QuestionsData.length) {
+                    ClearForm();
+                    debugger;
+                    if (QuestionId < 1) {
+                        QuestionObj = QuestionsData[0];
+                    }
+                    else {
+                        QuestionId = parseInt(QuestionId) + 1;
+                        QuestionObj = QuestionsData.find(x => x.id == QuestionId);
+                    }
+
+
+                    $("#QuestionId").val(QuestionObj.id)
+
+                    $("#Question").attr('src', QuestionObj.questionText);//text(QuestionObj.optionA);
+                    $("#questionA").text(QuestionObj.optionA);
+                    $("#questionB").text(QuestionObj.optionB);
+                    $("#questionC").text(QuestionObj.optionC);
+                    $("#questionD").text(QuestionObj.optionD);
+                }
+                else {
+                    $("#totalQuestion").text(QuestionsData.length);
+                    var CorrectAnswer = 0;
+                    var CountSource = 0;
+                    for (var i = 0; i < QuestionsData.length; i++) {
+                        if (QuestionsData[i].correctSelected) {
+                            CorrectAnswer = CorrectAnswer + 1;
+                            CountSource = CountSource + 5;
+                        }
+                    }
+                    $("#RightAnswers").text(CorrectAnswer);
+                    $("#SouAnswers").text(CountSource);
+
+                    $("#WrongAnswers").text(QuestionsData.length - CorrectAnswer);
+                    $("#Percentage").text(((CorrectAnswer / QuestionsData.length) * 100).toFixed(2));
+                    $("#ScoreDiv").removeClass("d-none");
+                    $("#QuizDiv").addClass("d-none");
+                }
+            }
+            else {
+                alert("Select One Answer");
+            }
+        }
+        function ClearForm() {
+            AnswerSelect = false;
+            $("#Question").text("");
+            $("#QuestionId").val("0");
+
+            $("#questionA").text("");
+            $("#questionB").text("");
+            $("#questionC").text("");
+            $("#questionD").text("");
+
+            $(".questionA").removeClass("trueColour");
+            $(".questionB").removeClass("trueColour");
+            $(".questionC").removeClass("trueColour");
+            $(".questionD").removeClass("trueColour");
+            $(".questionA").removeClass("badColour");
+            $(".questionB").removeClass("badColour");
+            $(".questionC").removeClass("badColour");
+            $(".questionD").removeClass("badColour");
+        }
+    </script>
+ }

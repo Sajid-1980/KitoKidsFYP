@@ -33,6 +33,7 @@ public class KitoKidsFYPContext : IdentityDbContext<ApplicationUser>
 
     // Level 3
     public DbSet<Level3Cluster>   Level3Clusters { get; set; }
+    public DbSet<NumberSystemLevel1> NumberSystemLevels { get; set; }
 
 
 

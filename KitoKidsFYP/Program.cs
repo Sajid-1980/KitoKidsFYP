@@ -46,7 +46,8 @@ builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.Models.ClusterFruitLevel2>();
 builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.Models.ClusterFruitLevel3>();
 builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.Models.ClusterFruitLevel4>();
 builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.Models.Level3Cluster>();
-
+builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.Models.NumberSystemLevel1>();
+ 
 
 builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.ViewModels.ClusterFruitLevel1ViewModel>();
 builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.ViewModels.ToyLevel1ViewModel>();
@@ -55,6 +56,7 @@ builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.ViewModels.AlphaLevel1ViewMod
 builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.ViewModels.ClusterFruitLevel2ViewModel>();
 builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.ViewModels.ClusterFruitLevel3ViewModel>();
 builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.ViewModels.LevelVm>();
+builder.Services.AddScoped<KitoKidsFYP.Areas.Admin.ViewModels.NumberSystemLevel1ViewModel>();
  
 var app = builder.Build();
 

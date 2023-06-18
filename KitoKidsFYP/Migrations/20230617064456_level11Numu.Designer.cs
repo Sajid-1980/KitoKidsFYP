@@ -4,6 +4,7 @@ using KitoKidsFYP.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KitoKidsFYP.Migrations
 {
     [DbContext(typeof(KitoKidsFYPContext))]
-    partial class KitoKidsFYPContextModelSnapshot : ModelSnapshot
+    [Migration("20230617064456_level11Numu")]
+    partial class level11Numu
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -244,7 +247,7 @@ namespace KitoKidsFYP.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("QuestionAudios")
+                    b.Property<string>("QuestionAudio")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -254,7 +257,7 @@ namespace KitoKidsFYP.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("NumberSystemLevels");
+                    b.ToTable("NumberSystemLevel1s");
                 });
 
             modelBuilder.Entity("KitoKidsFYP.Areas.Admin.Models.ToysLevel1", b =>
